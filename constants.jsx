@@ -14,9 +14,9 @@ import {
   Cloud,
   Box
 } from 'lucide-react';
-import { Course, ExpertiseItem, CounterItem, Job, Project } from './types';
+// type imports removed for plain JS
 
-export const COURSES: Course[] = [
+export const COURSES = [
   {
     id: 'ui-ux',
     title: 'UI/UX Designing',
@@ -67,7 +67,7 @@ export const COURSES: Course[] = [
   }
 ];
 
-export const PROJECTS: Project[] = [
+export const PROJECTS = [
   {
     id: 'enterprise-ecommerce',
     title: 'Enterprise E-Commerce',
@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const EXPERTISE: ExpertiseItem[] = [
+export const EXPERTISE = [
   {
     category: 'Artificial Intelligence',
     tools: ['Python', 'PyTorch', 'OpenCV', 'NumPy', 'SciPy', 'TensorFlow', 'Keras', 'spaCy', 'Gensim', 'OpenAI', 'LangChain', 'YOLO', 'Pandas', 'Matplotlib', 'Seaborn', 'Meta Llama', 'Anthropic', 'Mistral', 'KNIME', 'Orange']
@@ -161,14 +161,14 @@ export const EXPERTISE: ExpertiseItem[] = [
   }
 ];
 
-export const STATS: CounterItem[] = [
+export const STATS = [
   { value: 500, label: 'Students Trained', suffix: '+' },
   { value: 200, label: 'Placements', suffix: '+' },
   { value: 10, label: 'Expert Mentors', suffix: '+' },
   { value: 5, label: 'Years Experience', suffix: '+' }
 ];
 
-export const JOBS: Job[] = [
+export const JOBS = [
   { id: '1', title: 'Full Stack Developer', type: 'Full-time', location: 'Visakhapatnam' },
   { id: '2', title: 'Frontend Developer', type: 'Full-time', location: 'Remote / Office' },
   { id: '3', title: 'Graphic Designer', type: 'Contract', location: 'Visakhapatnam' },

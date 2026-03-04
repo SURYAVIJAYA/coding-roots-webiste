@@ -1,11 +1,10 @@
 
 import React from 'react';
-// @ts-ignore - fixing missing exported members error in react-router-dom types
 import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-[#020C1B] pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,8 +36,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               {['Home', 'About Us', 'Career', 'Portfolio', 'Contact Us'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`} 
+                  <Link
+                    to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}
                     className="text-[#8892B0] hover:text-[#64FFDA] transition-colors"
                   >
                     {item}

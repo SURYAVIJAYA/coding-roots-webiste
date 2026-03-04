@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-// @ts-ignore - fixing missing exported members error in react-router-dom types
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -80,7 +79,7 @@ const CodeTerminalAnimation = () => {
   );
 };
 
-const Home: React.FC = () => {
+const Home = () => {
   const [activeExpertise, setActiveExpertise] = useState(0);
 
   return (

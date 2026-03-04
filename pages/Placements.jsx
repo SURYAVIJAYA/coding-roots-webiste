@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Award, Briefcase, Star, CheckCircle, ExternalLink, Globe } from 'lucide-react';
 import { STATS } from '../constants';
 
-const PartnerLogo = ({ name, domain }: { name: string, domain: string }) => {
+const PartnerLogo = ({ name, domain }) => {
   const [hasError, setHasError] = useState(false);
   const [useFallback, setUseFallback] = useState(false);
 
@@ -16,11 +16,11 @@ const PartnerLogo = ({ name, domain }: { name: string, domain: string }) => {
   return (
     <div className="bg-[#112240] h-32 rounded-2xl flex items-center justify-center border border-[#233554] hover:border-[#64FFDA]/50 hover:bg-[#112240]/80 transition-all group relative overflow-hidden p-4">
       <div className="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-[#64FFDA] transition-all" />
-      
+
       {!hasError ? (
         <div className="w-full h-full bg-white rounded-xl p-4 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-105">
-          <img 
-            src={useFallback ? fallbackUrl : logoUrl} 
+          <img
+            src={useFallback ? fallbackUrl : logoUrl}
             alt={`${name} logo`}
             onError={() => {
               if (!useFallback) {
@@ -40,7 +40,7 @@ const PartnerLogo = ({ name, domain }: { name: string, domain: string }) => {
           </span>
         </div>
       )}
-      
+
       <div className="absolute bottom-1 text-[8px] text-[#64FFDA] font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity uppercase">
         {name}
       </div>
@@ -48,7 +48,7 @@ const PartnerLogo = ({ name, domain }: { name: string, domain: string }) => {
   );
 };
 
-const Placements: React.FC = () => {
+const Placements = () => {
   const partners = [
     { name: 'TCS', domain: 'tcs.com' },
     { name: 'Infosys', domain: 'infosys.com' },
@@ -103,7 +103,7 @@ const Placements: React.FC = () => {
                 We bridge the gap between talent and opportunity by collaborating with industry giants and fast-growing tech startups.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {partners.map((partner, idx) => (
                 <PartnerLogo key={idx} name={partner.name} domain={partner.domain} />
@@ -126,12 +126,12 @@ const Placements: React.FC = () => {
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <Award size={180} className="text-[#64FFDA]" />
             </div>
-            
+
             <div className="relative z-10">
               <div className="w-16 h-16 bg-[#64FFDA]/10 rounded-2xl flex items-center justify-center text-[#64FFDA] mb-8">
                 <Briefcase size={32} />
               </div>
-              <h3 className="text-3xl font-bold text-[#E6F1FF] mb-8 leading-tight">Elite Career <br/>Support Program</h3>
+              <h3 className="text-3xl font-bold text-[#E6F1FF] mb-8 leading-tight">Elite Career <br />Support Program</h3>
               <ul className="space-y-6">
                 {[
                   { title: 'Resume Engineering', desc: 'ATS-optimized resume building by experts.' },

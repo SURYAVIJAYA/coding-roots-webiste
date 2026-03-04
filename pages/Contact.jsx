@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '', countryCode: '+91' });
-  const [errors, setErrors] = useState<{ [k: string]: string }>({});
+  const [errors, setErrors] = useState({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value: raw } = e.target as HTMLInputElement;
+  const handleChange = (e) => {
+    const { name, value: raw } = e.target;
     let value = raw;
     if (name === 'phone') {
       value = raw.replace(/\D/g, '');
@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
   };
 
   const validate = () => {
-    const e: { [k: string]: string } = {};
+    const e = {};
     if (!form.name.trim()) e.name = 'Please enter your name.';
     const phoneDigits = form.phone.replace(/[^0-9]/g, '');
     if (!phoneDigits) e.phone = 'Please enter your phone number.';
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
     // On valid submission show a JS popup (alert). Replace with real submission later.

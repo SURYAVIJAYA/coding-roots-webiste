@@ -1,6 +1,5 @@
 
 import React, { useEffect } from 'react';
-// @ts-ignore - fixing missing exported members error in react-router-dom types
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,7 +13,6 @@ import CourseDetail from './pages/CourseDetail';
 import ProjectDetail from './pages/ProjectDetail';
 
 const ScrollToTop = () => {
-  // @ts-ignore - fixing missing exported members error in react-router-dom types
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,7 +20,7 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <HashRouter>
       <div className="flex flex-col min-h-screen">

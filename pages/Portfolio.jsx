@@ -1,12 +1,11 @@
 
 import React from 'react';
-// @ts-ignore
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 import { PROJECTS } from '../constants';
-import { Project } from '../types';
+// types removed for JS
 
-const Portfolio: React.FC = () => {
+const Portfolio = () => {
   // Double the projects to create a seamless infinite scroll loop
   const extendedProjects = [...PROJECTS, ...PROJECTS, ...PROJECTS];
 
@@ -26,7 +25,7 @@ const Portfolio: React.FC = () => {
         {/* Dynamic Scrolling Gallery */}
         <div className="relative h-[800px] w-full mt-8 overflow-hidden rounded-3xl border border-[#233554]/30 bg-[#112240]/20">
           <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-[#0A192F] via-transparent to-[#0A192F]" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full p-4 md:p-8">
             {/* Column 1: Scrolling Down */}
             <div className="relative h-full overflow-hidden group">
@@ -73,21 +72,21 @@ const Portfolio: React.FC = () => {
   );
 };
 
-const ProjectCard = ({ project }: { project: Project }) => (
+const ProjectCard = ({ project }) => (
   <Link to={`/portfolio/${project.id}`} className="group relative bg-[#112240] rounded-3xl overflow-hidden border border-[#233554] shadow-2xl hover:border-[#64FFDA] transition-all duration-500 block">
     <div className="aspect-[16/10] overflow-hidden">
-      <img 
-        src={project.image} 
-        alt={project.title} 
+      <img
+        src={project.image}
+        alt={project.title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-100"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-transparent to-transparent opacity-80" />
     </div>
-    
+
     <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
       <div className="text-[#64FFDA] text-xs font-bold uppercase tracking-widest mb-1">{project.category}</div>
       <h3 className="text-xl font-bold text-[#E6F1FF] mb-3">{project.title}</h3>
-      
+
       <div className="flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="text-[#64FFDA] flex items-center space-x-2 text-sm font-bold">
           <Eye size={18} />
@@ -95,7 +94,7 @@ const ProjectCard = ({ project }: { project: Project }) => (
         </div>
       </div>
     </div>
-    
+
     <div className="absolute top-4 right-4 bg-[#64FFDA] text-[#0A192F] px-3 py-1 rounded-full text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
       CLICK TO VIEW
     </div>

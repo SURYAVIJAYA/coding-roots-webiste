@@ -1,14 +1,13 @@
 
 import React from 'react';
-// @ts-ignore
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Zap, Globe, Users, Target, Rocket, Eye, Cpu, Code2, HeartHandshake } from 'lucide-react';
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <div className="pt-32 pb-24 overflow-hidden bg-[#0A192F]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
           <div className="space-y-8 animate-in fade-in slide-in-from-left duration-1000">
@@ -33,25 +32,25 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-          
-          <div className="relative animate-in fade-in slide-in-from-right duration-1000">
-             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#233554] group aspect-square lg:aspect-video">
-               <img 
-                 src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200" 
-                 alt="Professional Coding Environment" 
-                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-transparent" />
-             </div>
-             
-             {/* Floating Badge */}
-             <div className="absolute -bottom-10 -left-10 bg-[#112240] p-8 rounded-3xl border border-[#233554] shadow-2xl animate-bounce-slow z-20">
-                <div className="text-4xl font-bold text-[#64FFDA] mb-1">100%</div>
-                <div className="text-[#8892B0] font-medium text-sm uppercase tracking-widest">Project Based</div>
-             </div>
 
-             {/* Decorative element */}
-             <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#64FFDA]/10 blur-3xl rounded-full -z-10" />
+          <div className="relative animate-in fade-in slide-in-from-right duration-1000">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#233554] group aspect-square lg:aspect-video">
+              <img
+                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200"
+                alt="Professional Coding Environment"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-transparent" />
+            </div>
+
+            {/* Floating Badge */}
+            <div className="absolute -bottom-10 -left-10 bg-[#112240] p-8 rounded-3xl border border-[#233554] shadow-2xl animate-bounce-slow z-20">
+              <div className="text-4xl font-bold text-[#64FFDA] mb-1">100%</div>
+              <div className="text-[#8892B0] font-medium text-sm uppercase tracking-widest">Project Based</div>
+            </div>
+
+            {/* Decorative element */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#64FFDA]/10 blur-3xl rounded-full -z-10" />
           </div>
         </div>
 
@@ -93,25 +92,25 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { 
-                icon: <Cpu size={32} />, 
-                title: "Tech Sovereignty", 
-                desc: "We stay ahead of the curve, mastering AI, Cloud, and decentralized systems." 
+              {
+                icon: <Cpu size={32} />,
+                title: "Tech Sovereignty",
+                desc: "We stay ahead of the curve, mastering AI, Cloud, and decentralized systems."
               },
-              { 
-                icon: <Code2 size={32} />, 
-                title: "Code Excellence", 
-                desc: "We don't just write code; we architect scalable, bug-free solutions." 
+              {
+                icon: <Code2 size={32} />,
+                title: "Code Excellence",
+                desc: "We don't just write code; we architect scalable, bug-free solutions."
               },
-              { 
-                icon: <HeartHandshake size={32} />, 
-                title: "Client-Centric", 
-                desc: "Your growth is our benchmark for success. We build for your scale." 
+              {
+                icon: <HeartHandshake size={32} />,
+                title: "Client-Centric",
+                desc: "Your growth is our benchmark for success. We build for your scale."
               },
-              { 
-                icon: <Globe size={32} />, 
-                title: "Global Impact", 
-                desc: "Providing high-end technology from India to every corner of the world." 
+              {
+                icon: <Globe size={32} />,
+                title: "Global Impact",
+                desc: "Providing high-end technology from India to every corner of the world."
               }
             ].map((value, idx) => (
               <div key={idx} className="bg-[#112240]/50 p-8 rounded-3xl border border-[#233554] hover:bg-[#112240] hover:border-[#64FFDA] transition-all group">
@@ -128,14 +127,14 @@ const About: React.FC = () => {
         {/* Closing Image & CTA */}
         <div className="relative rounded-[3rem] overflow-hidden bg-[#112240] border border-[#233554] p-12 lg:p-24 text-center space-y-8">
           <div className="absolute inset-0 z-0">
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1600" 
-              alt="Technology Background" 
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1600"
+              alt="Technology Background"
               className="w-full h-full object-cover opacity-10"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#112240] via-transparent to-[#112240]" />
           </div>
-          
+
           <div className="relative z-10 space-y-6">
             <h2 className="text-4xl lg:text-6xl font-extrabold text-[#E6F1FF]">Ready to <span className="text-[#64FFDA]">Root</span> Your Success?</h2>
             <p className="text-[#8892B0] text-xl max-w-2xl mx-auto">

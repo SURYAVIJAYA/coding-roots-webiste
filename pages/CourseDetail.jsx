@@ -1,13 +1,11 @@
 
 import React, { useState } from 'react';
-// @ts-ignore - fixing missing exported members error in react-router-dom types
 import { useParams, Link } from 'react-router-dom';
 import { COURSES } from '../constants';
 import { ArrowLeft, CheckCircle, Clock, BookOpen, ShieldCheck } from 'lucide-react';
 
-const CourseDetail: React.FC = () => {
-  // @ts-ignore - fixing missing exported members error in react-router-dom types
-  const { id } = useParams<{ id: string }>();
+const CourseDetail = () => {
+  const { id } = useParams();
   const course = COURSES.find(c => c.id === id);
 
   if (!course) {
@@ -70,12 +68,12 @@ const CourseDetail: React.FC = () => {
               onSubmit={(e) => {
                 e.preventDefault();
                 // basic client-side gather — in real app, send to API
-                const formEl = e.currentTarget as HTMLFormElement;
+                const formEl = e.currentTarget;
                 const data = new FormData(formEl);
-                const name = data.get('name') as string;
-                const email = data.get('email') as string;
-                const contact = data.get('contact') as string;
-                const qualification = data.get('qualification') as string;
+                const name = data.get('name');
+                const email = data.get('email');
+                const contact = data.get('contact');
+                const qualification = data.get('qualification');
                 if (!name || !email || !contact) {
                   alert('Please fill name, email and contact before enrolling.');
                   return;

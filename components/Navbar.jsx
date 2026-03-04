@@ -1,15 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-// @ts-ignore - fixing missing exported members error in react-router-dom types
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Rocket } from 'lucide-react';
 import { COURSES } from '../constants';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showCourses, setShowCourses] = useState(false);
-  // @ts-ignore - fixing missing exported members error in react-router-dom types
   const location = useLocation();
 
   useEffect(() => {
@@ -51,9 +49,9 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="text-[#E6F1FF] hover:text-[#64FFDA] font-medium transition-colors">Home</Link>
             <Link to="/about" className="text-[#E6F1FF] hover:text-[#64FFDA] font-medium transition-colors">About Us</Link>
-            
+
             {/* Courses Dropdown */}
-            <div 
+            <div
               className="relative group"
               onMouseEnter={() => setShowCourses(true)}
               onMouseLeave={() => setShowCourses(false)}
@@ -65,8 +63,8 @@ const Navbar: React.FC = () => {
               {showCourses && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-[#112240] border border-[#233554] rounded-xl shadow-2xl p-4 grid gap-2 animate-in fade-in slide-in-from-top-2 duration-200">
                   {COURSES.map((course) => (
-                    <Link 
-                      key={course.id} 
+                    <Link
+                      key={course.id}
                       to={`/courses/${course.id}`}
                       className="p-2 rounded-lg hover:bg-[#233554] text-[#8892B0] hover:text-[#64FFDA] text-sm transition-all"
                     >
@@ -81,7 +79,7 @@ const Navbar: React.FC = () => {
             <Link to="/portfolio" className="text-[#E6F1FF] hover:text-[#64FFDA] font-medium transition-colors">Portfolio</Link>
             <Link to="/career" className="text-[#E6F1FF] hover:text-[#64FFDA] font-medium transition-colors">Career</Link>
             <Link to="/contact" className="text-[#E6F1FF] hover:text-[#64FFDA] font-medium transition-colors">Contact Us</Link>
-            
+
             <div className="flex items-center space-x-4 ml-4">
               <a href="tel:+918639176137" className="flex items-center space-x-2 text-[#64FFDA] border border-[#64FFDA] px-4 py-2 rounded-lg hover:bg-[#64FFDA]/10 transition-all font-medium text-sm">
                 <Phone size={16} />

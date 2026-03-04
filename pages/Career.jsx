@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { Briefcase, MapPin, Clock, Send } from 'lucide-react';
 import { JOBS } from '../constants';
 
-const Career: React.FC = () => {
+const Career = () => {
   const [form, setForm] = useState({ name: '', email: '', role: '', link: '' });
-  const [errors, setErrors] = useState<{ [k: string]: string }>({});
+  const [errors, setErrors] = useState({});
   const validate = () => {
-    const e: { [k: string]: string } = {};
+    const e = {};
     if (!form.name.trim()) e.name = 'Please enter your full name.';
     const emailRegex = /^\S+@\S+\.\S+$/;
     if (!form.email.trim()) e.email = 'Please enter your email address.';
@@ -20,13 +20,13 @@ const Career: React.FC = () => {
     return Object.keys(e).length === 0;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
     setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
     // TODO: hook up real submission (API/email)

@@ -1,13 +1,11 @@
 
 import React from 'react';
-// @ts-ignore
 import { useParams, Link } from 'react-router-dom';
 import { PROJECTS } from '../constants';
 import { ArrowLeft, CheckCircle, ExternalLink, Github, Code2, Layers, Cpu } from 'lucide-react';
 
-const ProjectDetail: React.FC = () => {
-  // @ts-ignore
-  const { id } = useParams<{ id: string }>();
+const ProjectDetail = () => {
+  const { id } = useParams();
   const project = PROJECTS.find(p => p.id === id);
 
   if (!project) {
